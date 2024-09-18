@@ -30,7 +30,7 @@ private EntityManager entityManager;
 	@Override
 	public List<ServiceRequest> findAll() {
 		// TODO Auto-generated method stub
-		return entityManager.createQuery("SELECT s FROM ServiceRequest s",ServiceRequest.class).getResultList();
+		return entityManager.createQuery("SELECT s FROM ServiceRequest s order by s.reqid desc",ServiceRequest.class).getResultList();
 	}
 
 	@Override
