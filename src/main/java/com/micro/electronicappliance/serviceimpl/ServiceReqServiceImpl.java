@@ -26,25 +26,21 @@ private TechnicianRepo technicianRepo;
 
 	@Override
 	public ServiceRequest findById(int id) {
-		// TODO Auto-generated method stub
 		return repo.findById(id);
 	}
 
 	@Override
 	public List<ServiceRequest> findAll() {
-		// TODO Auto-generated method stub
-		return repo.findAll();
+				return repo.findAll();
 	}
 
 	@Override
 	public void update(ServiceRequest serviceRequest) {
-		// TODO Auto-generated method stub
 		repo.update(serviceRequest);
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
 		repo.delete(id);
 	}
 public void assignTech( @RequestParam int req,int tech) {

@@ -23,13 +23,13 @@ private EntityManager entityManager;
 
 	@Override
 	public ServiceRequest findById(int id) {
-		// TODO Auto-generated method stub
+	
 		return entityManager.find(ServiceRequest.class, id);
 	}
 
 	@Override
 	public List<ServiceRequest> findAll() {
-		// TODO Auto-generated method stub
+		
 		return entityManager.createQuery("SELECT s FROM ServiceRequest s order by s.reqid desc",ServiceRequest.class).getResultList();
 	}
 

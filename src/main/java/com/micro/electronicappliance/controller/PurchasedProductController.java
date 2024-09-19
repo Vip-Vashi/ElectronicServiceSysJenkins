@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,7 +44,7 @@ public ResponseEntity<String> registerProduct(
     @RequestParam("purchaseDate") String purchaseDate,
     @RequestParam("branch") String branch,
     @RequestParam("appliance") int applianceId,
-//    @RequestParam("model") String model,
+
     @RequestParam("customer") int customerId,
     @RequestParam("imageBlob") MultipartFile imageBlob
 ) {
@@ -58,8 +57,7 @@ public ResponseEntity<String> registerProduct(
         product.setPurchaseDate(purchaseDateParsed);
         product.setBranch(branch);
         product.setImageBlob(imageBlobBytes);
-        // Set appliance and customer using their IDs
-        // Assuming you have service methods to get these entities
+        
         Appliances appliance = appliancesService.getApplianceById(applianceId);
         Customer customer = customerService.getCustomerById(customerId);
         product.setAppliances(appliance);

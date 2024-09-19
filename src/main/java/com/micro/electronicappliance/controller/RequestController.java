@@ -102,7 +102,6 @@ public void deleteServiceRequest(@PathVariable int id) {
 @PostMapping("/mail")
 public ResponseEntity<String> sendEmail(@RequestBody ServiceRequest request) {
     try {
-        // Extract details from the request
     	System.out.println(request);
         
         	int customerid	= request.getCustomer().getCid();
@@ -110,8 +109,7 @@ public ResponseEntity<String> sendEmail(@RequestBody ServiceRequest request) {
         	String recipientEmail =customer.getEmail();
             String name = customer.getName();
         int reqid = request.getReqid();
-        System.out.println(recipientEmail);
-        
+               
 
         // Create email subject and body
         String subject = "Service Request Submission";
@@ -122,7 +120,7 @@ public ResponseEntity<String> sendEmail(@RequestBody ServiceRequest request) {
 
         return ResponseEntity.ok("Email sent successfully");
     } catch (Exception e) {
-        e.printStackTrace();
+       
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send email");
     }
 }

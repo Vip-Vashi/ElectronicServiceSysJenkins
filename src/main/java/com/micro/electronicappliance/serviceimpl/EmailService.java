@@ -19,6 +19,6 @@ public void sendEmail(String to, String subject, String text) {
     message.setSubject(subject);
     message.setText(text);
     javaMailSender.send(message);
-    System.out.println("mail sended");
+   
 }
 }

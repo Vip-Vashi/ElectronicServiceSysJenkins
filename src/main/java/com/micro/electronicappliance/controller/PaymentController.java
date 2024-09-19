@@ -33,7 +33,7 @@ public ResponseEntity<Payment> createPayment(@RequestParam("reqid") int reqid , 
 		@RequestParam("sparepartcharge") int sparepartcharge,@RequestParam("billamt") int billamt,
 		@RequestParam("status") String status
 	) {
-	     System.out.println(billamt);
+	    
 	   ServiceRequest request = reqService.findById(reqid);
 	   Payment payment = new Payment();
 	   payment.setRequest(request);
@@ -42,7 +42,7 @@ public ResponseEntity<Payment> createPayment(@RequestParam("reqid") int reqid , 
 	   payment.setBillamt(billamt);
 	   payment.setStatus(status);
 	   service.savePayment(payment);
-//    Payment savedPayment = service.savePayment(payment);
+
     return new ResponseEntity<>(payment, HttpStatus.CREATED);
 }
 

@@ -35,7 +35,7 @@ public class PurchasedProduct {
 
 		public PurchasedProduct() {
 			super();
-			// TODO Auto-generated constructor stub
+			
 		}
 
 		public PurchasedProduct(int productId, String serialnum, LocalDate purchaseDate, String branch, byte[] imageBlob,

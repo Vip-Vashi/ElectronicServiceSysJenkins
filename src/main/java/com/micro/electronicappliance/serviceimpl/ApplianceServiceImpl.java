@@ -14,25 +14,25 @@ public class ApplianceServiceImpl implements AppliancesService{
 private AppliancesRepo repo;
 	@Override
 	public Appliances saveAppliance(Appliances appliance) {
-		// TODO Auto-generated method stub
+		
 		return repo.save(appliance);
 	}
 
 	@Override
 	public Appliances getApplianceById(int id) {
-		// TODO Auto-generated method stub
+		
 		return repo.findById(id);
 	}
 
 	@Override
 	public List<Appliances> getAllAppliances() {
-		// TODO Auto-generated method stub
+	
 		return repo.findAll();
 	}
 
 	@Override
 	public void deleteAppliance(int id) {
-		// TODO Auto-generated method stub
+		
 		repo.delete(id);
 	}
 

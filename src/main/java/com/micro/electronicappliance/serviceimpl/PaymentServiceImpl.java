@@ -15,27 +15,23 @@ public class PaymentServiceImpl implements PaymentService {
 
 	@Override
 	public Payment savePayment(Payment payment) {
-		// TODO Auto-generated method stub
 		return paymentRepository.save(payment);
 	}
 
 	@Override
 	public Payment getPaymentById(int id) {
-		// TODO Auto-generated method stub
 		return paymentRepository.findById(id);
 	}
 
 	@Override
 	public List<Payment> getAllPayments() {
-		// TODO Auto-generated method stub
 		return paymentRepository.findAll();
 	}
 
 	
 	@Override
 	public Payment updatePayment(Payment payment) {
-		// TODO Auto-generated method stub
-		return paymentRepository.update(payment);
+				return paymentRepository.update(payment);
 	}
 
 }

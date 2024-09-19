@@ -21,7 +21,7 @@ public class Payment {
 	    private ServiceRequest request;
 		public Payment() {
 			super();
-			// TODO Auto-generated constructor stub
+			
 		}
 		public Payment(int pid, int billamt, int servicecharge, int sparepartcharge, String status,
 				ServiceRequest request) {

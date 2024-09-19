@@ -39,16 +39,12 @@ public ResponseEntity<String> sendEmail(@RequestBody TechnicianEmailRequest requ
     try {
     	Technician technician = request.getTechnician();
         String password = request.getPassword();
-        // Extract details from the request
         String recipientEmail = technician.getUsername();
         String name = technician.getTname();
         String pwd = password;
-        
-//        String winningPrice = Double.toString(  request.getProduct().getCurrentBiddingPrice());
-
-        // Create email subject and body
+ 
         String subject = "Welcome to Stark Electronics ! Your Login Credentials";
-//        String text = String.format("Dear %s,\n\nCongratulations! You have won the auction for the product '%s' with a winning bid of %s.\n\nThank you for participating!\n\nBest Regards,\n AAA Auction Team",winner, productName, winningPrice);
+
         String body = String.format("Dear %s,\n\n"
         	    + "Welcome to  Stark Electronics Customer Support Service !\n\n"
         	    + "We are excited to have you on board. To get you started, please find your login credentials below:\n\n"
@@ -65,12 +61,11 @@ public ResponseEntity<String> sendEmail(@RequestBody TechnicianEmailRequest requ
         	    + "Admin Team\n"
         	    + "Stark Electronics\n"
         	    + "",name,recipientEmail,pwd);
-        // Send the email
         emailService.sendEmail(recipientEmail, subject, body);
 
         return ResponseEntity.ok("Email sent successfully");
     } catch (Exception e) {
-        e.printStackTrace();
+       
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to send email");
     }
 }

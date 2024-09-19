@@ -17,25 +17,25 @@ public class AdminServiceImpl implements Adminservice {
     private AdminuserRepo administrativeUserRepository;
 
 	public AdministrativeUser saveAdministrativeUser(AdministrativeUser admin) {
-		// TODO Auto-generated method stub
+		
 		return administrativeUserRepository.save(admin);
 	}
 
 	
 	public AdministrativeUser getAdministrativeUserById(int adminid) {
-		// TODO Auto-generated method stub
+		
 		 return administrativeUserRepository.findById(adminid);
 	}
 
 	
 	public List<AdministrativeUser> getAllAdministrativeUsers() {
-		// TODO Auto-generated method stub
+		
 		 return administrativeUserRepository.findAll();
 	}
 
 	
 	public void deleteAdministrativeUser(int adminid) {
-		// TODO Auto-generated method stub
+		
 		
 	        if (administrativeUserRepository.findById(adminid) != null) {
 	            administrativeUserRepository.delete(adminid);
@@ -46,7 +46,7 @@ public class AdminServiceImpl implements Adminservice {
 
 	
 	public AdministrativeUser updateAdministrativeUser(AdministrativeUser admin) {
-		// TODO Auto-generated method stub
+		
 		  if (administrativeUserRepository.findById(admin.getAdminUserId()) != null) {
 	            return administrativeUserRepository.save(admin);
 	        } else {

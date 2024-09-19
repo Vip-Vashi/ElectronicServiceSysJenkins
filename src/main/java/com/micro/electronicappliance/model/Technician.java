@@ -30,7 +30,7 @@ public class Technician {
     
 	public Technician() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	

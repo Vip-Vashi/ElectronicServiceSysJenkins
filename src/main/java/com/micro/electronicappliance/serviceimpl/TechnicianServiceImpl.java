@@ -15,7 +15,6 @@ public class TechnicianServiceImpl implements TechnicianService{
 private TechnicianRepo repo;
 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 public Technician saveTech(Technician tech) {
-	// TODO Auto-generated method stub
 	tech.setPassword(encoder.encode(tech.getPassword()));
 	
 	return  repo.save(tech);
@@ -23,25 +22,21 @@ public Technician saveTech(Technician tech) {
 
 
 public Technician getById(int id) {
-	// TODO Auto-generated method stub
 	return repo.findById(id);
 }
 
 
 public List<Technician> getAll() {
-	// TODO Auto-generated method stub
 	return repo.findAll();
 }
 
 
 public void deleteById(int id) {
-	// TODO Auto-generated method stub
 	repo.delete(id);
 }
 
 
 public Technician updateTech(int id, Technician tech) {
-	// TODO Auto-generated method stub
 	if(repo.findById(id)!=null) {
 		tech.setTechId(id);
 		
@@ -55,9 +50,8 @@ public Technician updateTech(int id, Technician tech) {
 
 
 public Technician updatePwd(int id, String oldpwd,String newpwd) {
-	// TODO Auto-generated method stub
 	Technician tech = repo.findById(id);
-//	if(tech!=null &&  oldpwd.equals(tech.getPassword())) {
+
 	if(tech!=null && encoder.matches(oldpwd, tech.getPassword())) {
 		tech.setPassword(encoder.encode(newpwd));
 		return repo.update(tech);

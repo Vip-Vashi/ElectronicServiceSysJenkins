@@ -59,14 +59,7 @@ public Object login(@RequestBody Login login) {
               return t; // Return the logged-in customer details
           }
       }
-//      List<Technician> technicians = technicianService.getAll();
-//      for (Technician t : technicians) {
-//          if (t.getUsername().equals(email) && t.getPassword().equals(password)) {
-//              // Successful login for customer
-//              return t; // Return the logged-in customer details
-//          }
-//      }
-//	
+
 	
 	return "Login Failed : Invalid Email or Password";
 }

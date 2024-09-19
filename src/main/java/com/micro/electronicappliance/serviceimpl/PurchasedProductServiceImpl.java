@@ -22,7 +22,6 @@ PurchasedProductRepo repo;
 
 	@Override
 	public PurchasedProduct getById(int productId) {
-		// TODO Auto-generated method stub
 		
 		  PurchasedProduct result= repo.findProductById(productId);  
 		  

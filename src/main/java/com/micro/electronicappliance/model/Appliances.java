@@ -19,7 +19,7 @@ private String model;
 private double price;
 public Appliances() {
 	super();
-	// TODO Auto-generated constructor stub
+	
 }
 public Appliances(int applianceid, String brand, String category, String productname, String model, double price) {
 	super();

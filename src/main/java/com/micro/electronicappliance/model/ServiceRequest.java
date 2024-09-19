@@ -2,7 +2,7 @@ package com.micro.electronicappliance.model;
 
 
 import java.time.LocalDate;
-import java.util.Date;
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -44,7 +44,7 @@ public class ServiceRequest {
 
 	public ServiceRequest() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

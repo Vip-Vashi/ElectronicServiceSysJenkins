@@ -25,13 +25,13 @@ private EntityManager entityManager;
 
 	@Override
 	public Appliances findById(int id) {
-		// TODO Auto-generated method stub
+		
 		return entityManager.find(Appliances.class, id);
 	}
 
 	@Override
 	public List<Appliances> findAll() {
-		// TODO Auto-generated method stub
+		
 		return entityManager.createQuery("Select a FROM Appliances a", Appliances.class).getResultList();
 	}
 
